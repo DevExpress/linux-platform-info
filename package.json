@@ -1,6 +1,6 @@
 {
   "name": "linux-platform-info",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Returns platorm information (arch, libc) for Linux hosts",
   "main": "index.js",
   "scripts": {
@@ -23,5 +23,8 @@
   "homepage": "https://github.com/AndreyBelym/linux-platform-info#readme",
   "devDependencies": {
     "eslint": "^4.0.0"
+  },
+  "dependencies": {
+    "os-family": "^1.0.0"
   }
 }

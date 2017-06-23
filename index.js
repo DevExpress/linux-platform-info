@@ -1,4 +1,6 @@
 var execSync = require('child_process').execSync;
+var isLinux  = require('os-family').linux;
+
 
 var LIBC_TYPE = {
     glibc:   'glibc',
@@ -10,7 +12,7 @@ var bits = process.arch === 'x64' ? 64 : 32;
 
 function getLddOutput () {
     try {
-        return execSync('ldd --version').toString().split('\n');
+        return execSync('ldd --version', { stdio: 'pipe' }).toString().split('\n');
     }
     catch (e) {
         var output = e.message.split('\n');
@@ -32,7 +34,7 @@ function getLibCType () {
     return LIBC_TYPE.unknown;
 }
 
-var libcType = getLibCType();
+var libcType = isLinux ? getLibCType() : LIBC_TYPE.unknown;
 
 
 exports.LIBC_TYPE = LIBC_TYPE;

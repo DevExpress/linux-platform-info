@@ -26,7 +26,7 @@ function getLddOutput () {
 function getLibCType () {
     var lddOutput = getLddOutput();
 
-    if (/glibc/i.test(lddOutput[0]))
+    if (/glibc|gnu\s*libc/i.test(lddOutput[0]))
         return LIBC_TYPE.glibc;
     else if (/musl/i.test(lddOutput[0]))
         return LIBC_TYPE.musl;

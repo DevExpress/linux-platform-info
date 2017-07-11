@@ -1,6 +1,6 @@
 {
   "name": "linux-platform-info",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Returns platorm information (arch, libc) for Linux hosts",
   "main": "index.js",
   "scripts": {

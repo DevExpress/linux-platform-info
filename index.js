@@ -8,7 +8,7 @@ var LIBC_TYPE = {
     unknown: 'unknown'
 };
 
-var bits = process.arch === 'x64' ? 64 : 32;
+var bits = process.arch === 'x64' || process.arch === 'arm64' ? 64 : 32;
 
 function getLddOutput () {
     try {
